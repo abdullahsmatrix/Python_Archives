@@ -7,13 +7,13 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/01 15:59:05 by amamun          #+#    #+#               #
-#  Updated: 2026/02/01 17:09:28 by amamun          ###   ########.fr        #
+#  Updated: 2026/02/15 19:31:54 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
-def main():
-    name = "Rose"
-    height = 25
-    age = 30
+def main() -> None:
+    name: str = "Rose"
+    height: int = 25
+    age: int = 30
     print(f"Plant: {name.capitalize()}")
     print(f"Height: {height}cm")
     print(f"Age: {age} days")

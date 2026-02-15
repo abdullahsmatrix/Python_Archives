@@ -8,22 +8,22 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/01 17:34:03 by amamun          #+#    #+#               #
-#  Updated: 2026/02/01 21:49:07 by amamun          ###   ########.fr        #
+#  Updated: 2026/02/15 19:36:40 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 class Plant:
-    def __init__(self, name, height, age):
-        self.name = name
-        self.height = height
-        self.age = age
+    def __init__(self, name: str, height: int, age: int) -> None:
+        self.name: str = name
+        self.height: int = height
+        self.age: int = age
 
-    def track_plant(self):
+    def track_plant(self) -> str:
         return (f"{self.name}: {self.height}cm, {self.age} days old")
 
 
-def main():
-    plant_object = [
+def main() -> None:
+    plant_object: list[Plant] = [
         Plant('Rose', 25, 30),
         Plant('Sunflower', 80, 45),
         Plant('Cactus', 15, 120)

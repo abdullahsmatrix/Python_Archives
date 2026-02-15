@@ -8,22 +8,23 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/02 20:10:19 by amamun          #+#    #+#               #
-#  Updated: 2026/02/15 17:11:25 by amamun          ###   ########.fr        #
+#  Updated: 2026/02/15 19:43:31 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 class Plants:
-    def __init__(self, name, starting_height, starting_age):
-        self.name = name
-        self.starting_height = starting_height
-        self.starting_age = starting_age
+    def __init__(self, name: str, starting_height: int,
+                 starting_age: int) -> None:
+        self.name: str = name
+        self.starting_height: int = starting_height
+        self.starting_age: int = starting_age
 
-    def get_info(self):
+    def get_info(self) -> None:
         print(f"Created: {self.name} ({self.starting_height}cm, "
               f"{self.starting_age} days old)")
 
 
-def main():
-    plant_object = [
+def main() -> None:
+    plant_object: list[Plants] = [
         Plants("Rose", 25, 30),
         Plants("Oak", 200, 365),
         Plants("Cactus", 5, 90),
@@ -31,7 +32,7 @@ def main():
         Plants("Fern", 15, 120)
     ]
 
-    total_plant = 0
+    total_plant: int = 0
     for _ in plant_object:
         total_plant += 1
     for i in plant_object:
