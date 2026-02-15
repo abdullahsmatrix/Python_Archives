@@ -8,7 +8,7 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/02 20:10:19 by amamun          #+#    #+#               #
-#  Updated: 2026/02/03 19:59:48 by amamun          ###   ########.fr        #
+#  Updated: 2026/02/15 17:11:25 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 class Plants:
@@ -16,8 +16,11 @@ class Plants:
         self.name = name
         self.starting_height = starting_height
         self.starting_age = starting_age
+
     def get_info(self):
-        return f"Created: {self.name} ({self.starting_height}cm, {self.starting_age} days old)"
+        print(f"Created: {self.name} ({self.starting_height}cm, "
+              f"{self.starting_age} days old)")
+
 
 def main():
     plant_object = [
@@ -32,8 +35,9 @@ def main():
     for _ in plant_object:
         total_plant += 1
     for i in plant_object:
-        print(i.get_info())
+        i.get_info()
     print(f"Total plants created: {total_plant}")
+
 
 if __name__ == "__main__":
     main()
