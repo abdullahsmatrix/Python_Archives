@@ -6,7 +6,7 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/18 21:55:40 by amamun          #+#    #+#               #
-#  Updated: 2026/03/18 22:38:09 by amamun          ###   ########.fr        #
+#  Updated: 2026/03/19 00:01:27 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 from .Card import Card
@@ -30,9 +30,19 @@ class CreatureCard(Card):
         card_info['type'] = 'Creature'
         card_info['attack'] = self.attack
         card_info['health'] = self.health
+        return card_info
     
     def play(self, game_stat: dict) -> dict:
-        
+        return {
+            'card_played': self.name,
+            'mana_used': self.cost,
+            'effect': 'Creature summoned to battlefield'
+        }
 
     def attack_target(self, target) -> dict:
-        pass
+        return {
+            'attacker': self.name,
+            'target': target,
+            'damage_dealt': self.attack,
+            'combat_resolved': True
+        }
