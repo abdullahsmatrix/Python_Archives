@@ -6,22 +6,20 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/18 21:55:40 by amamun          #+#    #+#               #
-#  Updated: 2026/03/19 00:01:27 by amamun          ###   ########.fr        #
+#  Updated: 2026/03/19 22:33:04 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
-from .Card import Card
+from Card import Card
 
 class CreatureCard(Card):
     def __init__(self, name: str, cost: int, rarity: str, attack: int, health: int) -> None:
         super().__init__(name, cost, rarity)
         if not isinstance(health, int) or health < 0:
-            raise ValueError("Health can't be negtive! Defaulting to 0")
-            self.health = 0
+            raise ValueError("Health can't be negtive!")
         else:
             self.health = health
         if not isinstance(attack, int) or attack < 0:
-            raise ValueError("Attack cannot be negative! Defaulting to 0")
-            self.attack = 0
+            raise ValueError("Attack cannot be negative!")
         else:
             self.attack = attack
     
@@ -39,10 +37,12 @@ class CreatureCard(Card):
             'effect': 'Creature summoned to battlefield'
         }
 
-    def attack_target(self, target) -> dict:
+    def attack_target(self, target: str) -> dict:
         return {
             'attacker': self.name,
             'target': target,
             'damage_dealt': self.attack,
             'combat_resolved': True
         }
+
+        

@@ -6,11 +6,11 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/18 21:48:19 by amamun          #+#    #+#               #
-#  Updated: 2026/03/18 22:37:44 by amamun          ###   ########.fr        #
+#  Updated: 2026/03/19 19:49:33 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-from abc import ABC
+from abc import ABC, abstractmethod
 
 class Card(ABC):
     def __init__(self, name:    str, cost:  int, rarity:    str) -> None:
