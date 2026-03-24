@@ -6,7 +6,7 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/19 22:59:38 by amamun          #+#    #+#               #
-#  Updated: 2026/03/19 23:16:27 by amamun          ###   ########.fr        #
+#  Updated: 2026/03/24 18:23:11 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 from ex0.Card import Card
@@ -21,8 +21,13 @@ class ArtifactCard(Card):
         return {
             'card_played': self.name,
             'mana_used': self.cost,
-            'effect': f"Permanent: {self.effect}"
+            'effect': self.effect
         }
+    def get_card_info(self) -> dict:
+        card_info: dict = super().get_card_info()
+        card_info['type'] = 'Artifact'
+        return card_info
+        
 
     def activate_ability(self) -> dict:
         pass

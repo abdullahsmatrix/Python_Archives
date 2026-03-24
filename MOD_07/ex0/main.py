@@ -6,11 +6,11 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/18 22:26:28 by amamun          #+#    #+#               #
-#  Updated: 2026/03/19 22:38:00 by amamun          ###   ########.fr        #
+#  Updated: 2026/03/24 17:16:48 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-from CreatureCard import CreatureCard
+from ex0.CreatureCard import CreatureCard
 
 
 def main() -> None:

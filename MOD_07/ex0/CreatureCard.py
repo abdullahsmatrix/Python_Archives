@@ -6,10 +6,10 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/18 21:55:40 by amamun          #+#    #+#               #
-#  Updated: 2026/03/19 22:33:04 by amamun          ###   ########.fr        #
+#  Updated: 2026/03/24 17:16:59 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
-from Card import Card
+from ex0.Card import Card
 
 class CreatureCard(Card):
     def __init__(self, name: str, cost: int, rarity: str, attack: int, health: int) -> None:
