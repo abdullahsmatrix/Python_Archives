@@ -1,27 +1,16 @@
 # ************************************************************************* #
 #                                                                           #
 #                                                      :::      ::::::::    #
-#  GameStrategy.py                                   :+:      :+:    :+:    #
+#  test.py                                           :+:      :+:    :+:    #
 #                                                  +:+ +:+         +:+      #
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
-#  Created: 2026/03/24 21:44:31 by amamun          #+#    #+#               #
-#  Updated: 2026/03/24 23:21:49 by amamun          ###   ########.fr        #
+#  Created: 2026/03/25 18:43:45 by amamun          #+#    #+#               #
+#  Updated: 2026/03/25 18:45:10 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
-from abc import ABC, abstractmethod
+from card_generator import CardGenerator
 
-class GameStrategy(ABC):
-    
-    @abstractmethod
-    def execute_turn(self, hand: list, battlefield: list) -> dict:
-        ...
-    
-    @abstractmethod
-    def get_strategy_name(self) -> str:
-        ...
-    
-    @abstractmethod
-    def prioritize_targets(self, available_targets: list) -> list:
-        ...
-    
+generator = CardGenerator()
+
+print (generator.get_all_creatures())
