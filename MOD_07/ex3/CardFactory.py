@@ -6,11 +6,12 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/24 21:47:57 by amamun          #+#    #+#               #
-#  Updated: 2026/03/25 19:40:29 by amamun          ###   ########.fr        #
+#  Updated: 2026/03/26 20:45:56 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 from abc import ABC, abstractmethod
 from ex0.Card import Card
+
 
 class CardFactory(ABC):
     @abstractmethod
@@ -26,9 +27,9 @@ class CardFactory(ABC):
         ...
 
     @abstractmethod
-    def create_themed_deck(self, size: int) -> dict:
+    def create_themed_deck(self, size: int) -> dict[str, list[Card]]:
         ...
 
     @abstractmethod
-    def get_supported_types(self) -> dict:
+    def get_supported_types(self) -> dict[str, list[str]]:
         ...

@@ -6,43 +6,43 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/18 21:55:40 by amamun          #+#    #+#               #
-#  Updated: 2026/03/24 17:16:59 by amamun          ###   ########.fr        #
+#  Updated: 2026/03/26 20:46:47 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 from ex0.Card import Card
 
+
 class CreatureCard(Card):
-    def __init__(self, name: str, cost: int, rarity: str, attack: int, health: int) -> None:
+    def __init__(self, name: str, cost: int, rarity: str, attack: int,
+                 health: int) -> None:
         super().__init__(name, cost, rarity)
         if not isinstance(health, int) or health < 0:
             raise ValueError("Health can't be negtive!")
         else:
-            self.health = health
+            self.health: int = health
         if not isinstance(attack, int) or attack < 0:
             raise ValueError("Attack cannot be negative!")
         else:
-            self.attack = attack
-    
-    def get_card_info(self) -> dict:
-        card_info: dict = super().get_card_info()
+            self.attack: int = attack
+
+    def get_card_info(self) -> dict[str, object]:
+        card_info: dict[str, object] = super().get_card_info()
         card_info['type'] = 'Creature'
         card_info['attack'] = self.attack
         card_info['health'] = self.health
         return card_info
-    
-    def play(self, game_stat: dict) -> dict:
+
+    def play(self, game_stat: dict[str, object]) -> dict[str, object]:
         return {
             'card_played': self.name,
             'mana_used': self.cost,
             'effect': 'Creature summoned to battlefield'
         }
 
-    def attack_target(self, target: str) -> dict:
+    def attack_target(self, target: str) -> dict[str, object]:
         return {
             'attacker': self.name,
             'target': target,
             'damage_dealt': self.attack,
             'combat_resolved': True
         }
-
-        

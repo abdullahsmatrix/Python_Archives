@@ -6,7 +6,7 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/24 23:07:37 by amamun          #+#    #+#               #
-#  Updated: 2026/03/25 19:37:06 by amamun          ###   ########.fr        #
+#  Updated: 2026/03/26 20:45:56 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 from ex3.FantasyCardFactory import FantasyCardFactory
@@ -14,7 +14,7 @@ from ex3.AggressiveStrategy import AggressiveStrategy
 from ex3.GameEngine import GameEngine
 
 
-def main():
+def main() -> None:
     print("=== DataDeck Game Engine ===\n")
 
     factory = FantasyCardFactory()
