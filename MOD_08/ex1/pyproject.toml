@@ -1,0 +1,21 @@
+[project]
+name = "ex1"
+version = "0.1.0"
+package-mode = false
+description = "Simulating virtual environments and managing package dependencies"
+authors = [
+    {name = "amamun@student.42warsaw.pl"}
+]
+license = "N/A"
+requires-python = "^3.11"
+dependencies = [
+    "pandas (>=3.0.1,<4.0.0)",
+    "numpy (>=2.4.4,<3.0.0)",
+    "matplotlib (>=3.10.8,<4.0.0)",
+    "requests (>=2.33.0,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
