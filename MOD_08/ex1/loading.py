@@ -6,7 +6,7 @@
 #  By: amamun <amamun@student.42warsaw.pl>       +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/29 21:51:31 by amamun          #+#    #+#               #
-#  Updated: 2026/03/30 17:28:09 by amamun          ###   ########.fr        #
+#  Updated: 2026/03/30 23:21:04 by amamun          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 import sys
@@ -18,29 +18,35 @@ import matplotlib.pyplot as plt
 
 def check_dependencies() -> None:
     print("Checking dependencies:")
-    
-    required_packages: list[str] = ["pandas", "numpy", "matplotlib", "requests"]
+
+    required_packages: list[str] = [
+        "pandas",
+        "numpy",
+        "matplotlib",
+        "requests",
+    ]
     installed_packages: dict = {}
     missing_packages: list = []
-    
+
     for pkg in required_packages:
         try:
             module = importlib.import_module(pkg)
             version = getattr(module, "__version__", "unknown")
             print(f"[OK] {pkg} ({version})")
             installed_packages[pkg] = version
-        
-        except ImportError: 
+
+        except ImportError:
             print(f"[MISSING] {pkg}")
             missing_packages.append(pkg)
     return installed_packages, missing_packages
-    
+
+
 def show_dependency_comparison():
     print("\nDependency Management Comparison:")
-    print("- pip: simple installation, manual version control, possible conflicts")
-    print("- poetry: dependency resolution, lock files, reproducible environments")
-    
-    
+    print("- pip: simple installation, manual version")
+    print("  control, possible conflicts")
+    print("- poetry: dependency resolution, lock files,")
+    print("  reproducible environments")
 
 
 def main() -> None:
@@ -54,27 +60,27 @@ def main() -> None:
         print("\nOr using Poetry:")
         print("poetry install")
         sys.exit()
-    
+
     show_dependency_comparison()
-    
+
     print("\nAnalyzing Matrix Data...")
     print("Processing 1000 data points...")
     time = np.arange(1000)
     signal = np.random.normal(loc=0, scale=1, size=1000)
     anomaly = np.abs(signal) > 2
-    
+
     data = pd.DataFrame({
-        "time":time,
-        "signal":signal,
-        "anomaly":anomaly        
+        "time": time,
+        "signal": signal,
+        "anomaly": anomaly
     })
-    
+
     mean_signal = data["signal"].mean()
     num_anomalies = data["anomaly"].sum()
-    
+
     print(f"Average signal: {mean_signal:.2f}")
     print(f"Detected anomalies: {num_anomalies}")
-    
+
     print("\nGenerating visualisations...")
     plt.figure()
     plt.plot(data["time"], data["signal"])
@@ -88,6 +94,7 @@ def main() -> None:
     plt.savefig("matrix_analysis.png")
     print("\nAnalysis complete!")
     print("Results saved to: matrix_analysis.png")
-        
+
+
 if __name__ == "__main__":
     main()

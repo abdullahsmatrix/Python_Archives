@@ -13,6 +13,7 @@ import sys
 import os
 import site
 
+
 class MatrixStatus:
     matrix_connected: bool
 
@@ -25,9 +26,11 @@ class MatrixStatus:
 
     @staticmethod
     def _activated_env_path() -> str | None:
-        return os.environ.get("VIRTUAL_ENV") or os.environ.get("CONDA_PREFIX")
-    
-    @classmethod    
+        return os.environ.get("VIRTUAL_ENV") or os.environ.get(
+            "CONDA_PREFIX"
+        )
+
+    @classmethod
     def check_connection(cls) -> bool:
         if cls._in_isolated_env():
             print("MATRIX STATUS: Welcome to the construct")
@@ -36,9 +39,9 @@ class MatrixStatus:
             print("MATRIX STATUS: You're still plugged in (no venv detected)")
             cls.matrix_connected = False
         return cls.matrix_connected
-    
 
-def  main() -> None:
+
+def main() -> None:
     connection: bool = MatrixStatus.check_connection()
     activated_env: str | None = MatrixStatus._activated_env_path()
     print(f"Current Python: {sys.executable}")
@@ -47,22 +50,22 @@ def  main() -> None:
         print(f"Virtual Environment: {os.path.basename(sys.prefix)}")
         print(f"Environment Path: {sys.prefix}")
         print("SUCCESS: You're in an isolated environment!")
-        print("Safe to install packages without affecting the global environment.\n")
+        print("Safe to install packages without affecting the")
+        print("global environment.\n")
         print("Package installation path:")
         for p in site.getsitepackages():
             print(p)
-    else: 
+    else:
         print("Virtual Environment: None detected")
-        print("WARNING: You're in the global (non-venv) environment! "
-              "The machines can see everything you install.")
-        print("To enter the construct, run:\n"
-                "python -m venv matrix_env\n"
-                "source matrix_env/bin/activate # On Unix\n"
-                "matrix_env\n"
-                "Scripts\n"
-                "activate # On Windows\n")
+        print(
+            "WARNING: You're in the global (non-venv) environment! "
+            "The machines can see everything you install."
+        )
+        print("To enter the construct, run:")
+        print("python -m venv matrix_env")
+        print("source matrix_env/bin/activate  # On Unix")
+        print("matrix_env/Scripts/activate  # On Windows")
         print("Then run this program again.")
-    
 
 
 if __name__ == "__main__":
